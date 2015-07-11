@@ -38,11 +38,11 @@ alias vi="/usr/bin/vi"
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # Syntax highlighting
-alias ls='ls -G'
+alias ls='ls --color'
 alias t='todotxt'
 
 # Set the prompt on an interactive shell
-source ~/dotfiles/colors_for_bash
+source ~/config/colors_for_bash
 FANCY_FLOWER="\342\235\200"  # fancy unicode character for the prompt
 FANCY_SPLAT="\342\234\273"  # fancy unicode character for the prompt
 FANCY_BIGSPLAT="\342\235\211"  # fancy unicode character for the prompt

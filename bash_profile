@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 # Last updated by holly 15 feb 2015
 #
 # This file is for configuring the interactive shell (when a human is using
@@ -30,16 +30,16 @@ set -o vi
 
 # aliases for commands
 #
-# puts slashes after directory names
-alias ls="/bin/ls -F"
+# G for Syntax highlighting
+alias ls="ls -G"
+# alias ls='ls --color' # for linux
+
 alias vi="/usr/bin/vi"
+alias t='todotxt'
 
 # Configure the colors ls uses.  See man ls to see what the setting mean
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
-# Syntax highlighting
-alias ls='ls --color'
-alias t='todotxt'
 
 # Set the prompt on an interactive shell
 source ~/config/colors_for_bash

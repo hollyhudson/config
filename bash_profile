@@ -57,7 +57,9 @@ FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
 #ENDCOLOR="\[\e[0m\]"
 #export PS1="$STARTCOLOR\h:\w: $ENDCOLOR"
 
-export PS1="\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\] "
+# The beginning is to tell iterm2 to put the working directory up thereL
+TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
+export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\] "
 
 # for mutt, should help maintain transparency of mutt's windows
 export COLORFGBG="default;default"
@@ -67,3 +69,4 @@ alias work='mutt -F .muttrc_work'
 
 # MacPorts wanted this
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+

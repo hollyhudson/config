@@ -4,6 +4,7 @@
 " shortcut for turning wrapped text into paragraphs
 :map Q !}fmt
 :set columns=80
+
 " change the tabstop below if you don't like the default (which is 8 spaces)
 " if you change tabstop it will change how it behaves in response to pressing
 " the tab key, and how it *appears* to you, regardless of how it was written.
@@ -31,6 +32,7 @@ syntax on
 " let vi figure out the filetype so it knows how to apply highlighting
 filetype plugin on
 au BufRead,BufNewFile *.ino set filetype=arduino
+autocmd Filetype gitcommit setlocal spell textwidth=72
 "
 " for encoding issues with Windows-produced files and Japanese 
 "

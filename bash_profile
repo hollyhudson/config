@@ -68,5 +68,5 @@ alias mutt='mutt -F .muttrc_home'
 alias work='mutt -F .muttrc_work'
 
 # MacPorts wanted this
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/sbin:$PATH
 

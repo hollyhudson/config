@@ -1,6 +1,9 @@
 " .exrc for Holly
 " Comments refer to the line below them
 "
+
+" Display syntax highlighting group on "U" keypress
+map U :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 " shortcut for turning wrapped text into paragraphs
 :map Q !}fmt
 :set columns=80

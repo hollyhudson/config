@@ -35,6 +35,7 @@ syntax on
 " let vi figure out the filetype so it knows how to apply highlighting
 filetype plugin on
 au BufRead,BufNewFile *.ino set filetype=arduino
+au BufRead,BufNewFile *.pde set filetype=java
 autocmd Filetype gitcommit setlocal spell textwidth=72
 "
 " for encoding issues with Windows-produced files and Japanese 

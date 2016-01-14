@@ -70,3 +70,12 @@ alias work='mutt -F .muttrc_work'
 # MacPorts wanted this
 export PATH=/opt/local/bin:/opt/local/sbin:/sbin:$PATH
 
+
+##
+# Your previous /Users/holly/.bash_profile file was backed up as /Users/holly/.bash_profile.macports-saved_2016-01-13_at_19:17:44
+##
+
+# MacPorts Installer addition on 2016-01-13_at_19:17:44: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

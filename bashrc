@@ -16,4 +16,4 @@
 umask 066
 
 # Where to find your commands and executables
-export PATH="/bin:/usr/bin:/usr/local/bin:/usr/ucb:~/bin:/usr/sbin"
+export PATH="/bin:/usr/bin:/usr/local/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin"

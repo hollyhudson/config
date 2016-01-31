@@ -40,6 +40,8 @@ alias t='todotxt'
 # Configure the colors ls uses.  See man ls to see what the setting mean
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
+# for git prompt, which is totally not working
+source ~/.git-prompt.sh
 
 # Set the prompt on an interactive shell
 source ~/config/colors_for_bash
@@ -59,7 +61,9 @@ FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
 
 # The beginning is to tell iterm2 to put the working directory up thereL
 TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
-export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\] "
+export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]$(__git_ps1 ' (%s)') "
+# the git stuff at the end is supposed to be for the git prompt
+# but it's not working
 
 # for mutt, should help maintain transparency of mutt's windows
 export COLORFGBG="default;default"

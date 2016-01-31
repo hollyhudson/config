@@ -41,6 +41,7 @@ alias t='todotxt'
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # for git prompt, which is totally not working
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
 # Set the prompt on an interactive shell

@@ -7,6 +7,7 @@
 
 " Display syntax highlighting group on "U" keypress
 map U :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
 " shortcut for turning wrapped text into paragraphs
 :map Q !}fmt
 :set columns=80
@@ -40,6 +41,10 @@ filetype plugin on
 au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.pde set filetype=java
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" disable automatic comment insertion and restore sanity
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "
 " for encoding issues with Windows-produced files and Japanese 
 "

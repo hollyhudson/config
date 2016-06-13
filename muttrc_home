@@ -1,0 +1,59 @@
+set signature=no
+#set spoolfile="imaps://hollyf@mail.swcp.com"
+set spoolfile="imaps://hollyf@216.184.2.128"
+set folder="imaps://hollyf@216.184.2.128"
+set smtp_url="smtp://216.184.2.128:587/"
+set from="Holly Hudson <hollyf@swcp.com>"
+set mail_check=5
+bind index G imap-fetch-mail
+set sort=threads
+set markers=no
+set edit_headers=yes
+
+### 
+# highlights mail from myself
+color index cyan default ~P
+# highlights mail flagged with !
+color index cyan default ~F
+# identifies URLs
+color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+# identifies email addresses
+color body brightgreen default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color index magenta default ~T
+color index black default ~D
+color attachment white default
+color hdrdefault yellow default
+
+### GPG ########################
+
+source ~/.mutt/crypto
+
+### muttqt for autocomplete addresses from Contacts/Address Book ######
+
+# set query_command="/usr/local/bin/muttqt -q '%s'"
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+### Sidebar ###################
+set sidebar_width=14
+set sidebar_visible=yes
+set sidebar_delim='|'
+set sidebar_sort=no
+color sidebar_new red default
+
+# b toggles sidebar visibility
+macro pager,index b ':toggle sidebar_visible<enter>'
+
+# Remap bounce-message function to “B”
+bind index B bounce-message
+
+bind index  sidebar-prev
+bind index  sidebar-next
+bind index  sidebar-open
+
+# which mailboxen to list in the sidebar
+mailboxes =inbox =resistor =bm =nl =social =nutrition =acn =and =ta =hunter =tickets =orders =spam =spamfile
+
+alias tramm Trammell Hudson <hudson@trmm.net>
+

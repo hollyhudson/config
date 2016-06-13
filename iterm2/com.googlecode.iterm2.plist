@@ -3493,6 +3493,10 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>3</string>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>3</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/config/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -3526,29 +3530,29 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>528 92 201 309 0 0 1366 745 </string>
+	<string>528 92 212 309 0 0 1366 745 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>370 260 924 485 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>795 39 570 706 0 0 1366 745 </string>
+	<string>862 19 490 726 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>215 73 570 672 0 0 1366 745 </string>
+	<string>-2 481 570 264 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>833 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
 	<string>829 39 570 689 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>164 175 570 570 0 0 1366 745 </string>
+	<string>466 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>589 56 570 689 0 0 1366 745 </string>
+	<string>57 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>79 39 570 706 0 0 1366 745 </string>
+	<string>20 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>733 39 570 706 0 0 1366 745 </string>
+	<string>18 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>164 39 570 706 0 0 1366 745 </string>
+	<string>708 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>756 39 570 706 0 0 1366 745 </string>
+	<string>754 39 570 706 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
 	<string>230 22 570 723 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
@@ -16003,7 +16007,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453408325.67406601</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>475606355.26768702</real>
+	<real>486505588.85595298</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -16068,7 +16072,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-27T16:44:10Z</date>
+	<date>2016-06-03T02:08:42Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -16102,7 +16106,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>.Helvetica Neue DeskInterface</string>
+	<string>.AppleSystemUIFont</string>
 	<key>Window Arrangements</key>
 	<dict>
 		<key>9 Windows</key>

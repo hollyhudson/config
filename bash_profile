@@ -24,7 +24,7 @@ export MANPATH="/usr/man:/usr/local/man:/opt/local/man:$MANPATH"
 # Basic behavior and interaction configuration
 export EDITOR=vi
 export PAGER=less
-export LESS="-d -f -X"
+export LESS="-d -f -X -R"
 # use vi for editing on the command line
 set -o vi
 
@@ -35,13 +35,13 @@ alias ls="ls -G"
 # alias ls='ls --color' # for linux
 
 alias vi="/usr/bin/vi"
-alias t='todotxt'
 
 # Configure the colors ls uses.  See man ls to see what the setting mean
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
-# for git prompt, which is totally not working
+# for git prompt
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+# must have \$(__git_ps1 ' (%s)') in your PS1, the \ is important!
 source ~/.git-prompt.sh
 
 # Set the prompt on an interactive shell
@@ -62,9 +62,7 @@ FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
 
 # The beginning is to tell iterm2 to put the working directory up thereL
 TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
-export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]$(__git_ps1 ' (%s)') "
-# the git stuff at the end is supposed to be for the git prompt
-# but it's not working
+export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
 
 # for mutt, should help maintain transparency of mutt's windows
 export COLORFGBG="default;default"
@@ -84,3 +82,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:/sbin:$PATH
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+export NVM_DIR="/Users/holly/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by Anaconda3 4.0.0 installer
+export PATH="//anaconda/bin:$PATH"

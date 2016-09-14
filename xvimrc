@@ -1,0 +1,23 @@
+" .xvimrc for Holly
+" Comments refer to the line below them
+"
+
+" Case-insensitive searching.
+set ignorecase
+
+" But case-sensitive if expression contains a capital letter.
+set smartcase
+
+" Use the system pasteboard
+set pasteboard
+
+" move between windows
+map <C-h> <C-w>h<CR>
+map <C-l> <C-w>l<CR>
+
+
+""""" Below are from my .exrc, they may break things
+
+" show matching parentheses and braces
+:set showmatch
+

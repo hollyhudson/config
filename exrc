@@ -32,8 +32,10 @@ map U :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' .
 :set showmatch
 :set scrolloff=3
 :iabbr NULL $^{-/-}$
+
 " don't yell at me when I mess up
 :set visualbell
+
 " syntax highlighting
 syntax on
 " let vi figure out the filetype so it knows how to apply highlighting
@@ -44,6 +46,9 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " disable automatic comment insertion and restore sanity
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" make it possible to edit the crontab
+autocmd FileType crontab setlocal nowritebackup
 
 "
 " for encoding issues with Windows-produced files and Japanese 

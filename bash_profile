@@ -32,6 +32,8 @@ set -o vi
 #
 # G for Syntax highlighting
 alias ls="ls -G"
+alias ll="ls -FlahG"
+alias s="git status"
 # alias ls='ls --color' # for linux
 
 alias vi="/usr/bin/vi"
@@ -63,6 +65,10 @@ FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
 # The beginning is to tell iterm2 to put the working directory up thereL
 TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
 export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
+
+# for pyenv, which manages multiple installs of python
+# https://github.com/yyuu/pyenv#homebrew-on-mac-os-x
+eval "$(pyenv init -)"
 
 # for mutt, should help maintain transparency of mutt's windows
 export COLORFGBG="default;default"

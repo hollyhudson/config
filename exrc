@@ -38,17 +38,26 @@ map U :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' .
 
 " syntax highlighting
 syntax on
+
+" -------- Language-specific formating stuff
+
 " let vi figure out the filetype so it knows how to apply highlighting
 filetype plugin on
 au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.pde set filetype=java
+
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " disable automatic comment insertion and restore sanity
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" keep the computer safe from being thrown across the room while writing yaml
+autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+
 " make it possible to edit the crontab
 autocmd FileType crontab setlocal nowritebackup
+
+" ------------ 
 
 "
 " for encoding issues with Windows-produced files and Japanese 

@@ -16,7 +16,9 @@
 umask 066
 
 # Where to find your commands and executables
-export PATH="/bin:/usr/bin:/usr/local/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin"
+export PATH="/bin:/usr/local/bin:/usr/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin:$HOME/.cargo/bin"
 
-export NVM_DIR="/Users/holly/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

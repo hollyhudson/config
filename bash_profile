@@ -34,6 +34,20 @@ set -o vi
 alias ls="ls -G"
 alias ll="ls -FlahG"
 alias s="git status"
+saynl() {
+	trans \
+		en:nl \
+		-show-original n \
+		-show-original-dictionary n \
+		-show-dictionary n \
+		-show-languages n \
+		-show-alternatives n \
+		-show-prompt-message n \
+		--no-ansi  \
+		"$*" \
+		| say -v Claire;
+}
+
 # alias ls='ls --color' # for linux
 
 alias vi="/usr/bin/vi"
@@ -46,15 +60,21 @@ export LSCOLORS="Exfxcxdxbxegedabagacad"
 # must have \$(__git_ps1 ' (%s)') in your PS1, the \ is important!
 source ~/.git-prompt.sh
 
-# Set the prompt on an interactive shell
+# Some kewl stuff
+# to get the codes for emojis:
+# echo -n [paste emoji here] | xxd -g1
 source ~/config/colors_for_bash
-FANCY_FLOWER="\342\235\200"  # fancy unicode character for the prompt
-FANCY_SPLAT="\342\234\273"  # fancy unicode character for the prompt
-FANCY_BIGSPLAT="\342\235\211"  # fancy unicode character for the prompt
-FANCY_BUG="\360\237\220\236"  # fancy unicode character for the prompt
-FANCY_FISH="\360\237\220\237"  # fancy unicode character for the prompt
-FANCY_TULIP="\360\237\214"  # fancy unicode character for the prompt
-FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
+U_FLOWER="\342\235\200"  
+U_SPLAT="\342\234\273"  
+U_BIGSPLAT="\342\235\211" 
+U_BUG="\360\237\220\236" 
+U_FISH="\360\237\220\237"
+U_TULIP="\360\237\214" 
+U_SAKURA="\360\237\214"
+U_SPROUT="\xf0\x9f\x8c\xb1"
+U_WHEAT="\xf0\x9f\x8c\xbe"
+U_HERB="\xf0\x9f\x8c\xbf"
+U_TEA="\xf0\x9f\x8d\xb5"
 
 #export PS1="\h:\w: "
 
@@ -64,33 +84,33 @@ FANCY_SAKURA="\360\237\214"  # fancy unicode character for the prompt
 
 # The beginning is to tell iterm2 to put the working directory up thereL
 TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
-export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
+export PS1="${TITLEBAR}\[$Blue\]\h:\w:\[$Color_Off\]\$(__git_ps1 ' (%s)') "
+#export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
 
 # for pyenv, which manages multiple installs of python
 # https://github.com/yyuu/pyenv#homebrew-on-mac-os-x
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
-# for mutt, should help maintain transparency of mutt's windows
-export COLORFGBG="default;default"
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+# if you can't find hass (home assistant) it's here:
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
 
-alias mutt='mutt -F .muttrc_home'
-alias work='mutt -F .muttrc_work'
-
-# MacPorts wanted this
-export PATH=/opt/local/bin:/opt/local/sbin:/sbin:$PATH
-
-
-##
-# Your previous /Users/holly/.bash_profile file was backed up as /Users/holly/.bash_profile.macports-saved_2016-01-13_at_19:17:44
-##
-
-# MacPorts Installer addition on 2016-01-13_at_19:17:44: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-export NVM_DIR="/Users/holly/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# added by Anaconda3 4.0.0 installer
-export PATH="//anaconda/bin:$PATH"
+# Greeting
+echo ""
+echo ""
+echo ""
+printf "                      Hello human!\n"
+echo ""
+printf "$U_TEA \n"
+printf "  it's $(date +"%H:%M"). how are you?\n"
+printf "  have you...                 \n"
+printf "   - taken a break lately?         \n"
+printf "   - stood and stretched?         \n"
+printf "   - done some meditation?       \n"
+printf "   - fixed some tea?          \n"
+printf "                       have a lovely day\n"
+echo ""
+printf "$U_SPROUT  $U_SPROUT  $U_SPROUT      $U_WHEAT  $U_WHEAT     $U_HERB  $U_HERB  $U_HERB\n"
+echo ""

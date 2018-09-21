@@ -16,7 +16,7 @@
 umask 066
 
 # Where to find your commands and executables
-export PATH="/bin:/usr/local/bin:/usr/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin:$HOME/.cargo/bin"
+export PATH="/bin:/usr/local/bin:/usr/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin:$HOME/bin:$HOME/anaconda3/bin"
 
 
 export NVM_DIR="$HOME/.nvm"

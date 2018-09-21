@@ -2,11 +2,13 @@
 " Comments refer to the line below them
 "
 
+" Tell vim where to find the plugin directory
+" (not working)
+:set runtimepath+=$HOME/.vim/
+:set runtimepath+=$HOME/.vim/plugin/
+
 " for working with processing IDE-generated files, use a modeline comment
 :set modelines=1
-
-" Display syntax highlighting group on "U" keypress
-map U :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 " shortcut for turning wrapped text into paragraphs
 :map Q !}fmt

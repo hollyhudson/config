@@ -51,6 +51,8 @@ saynl() {
 # alias ls='ls --color' # for linux
 
 alias vi="/usr/bin/vi"
+alias timenyc="TZ=America/New_York date"
+alias timeams="TZ=Europe/Amsterdam date"
 
 # Configure the colors ls uses.  See man ls to see what the setting mean
 export LSCOLORS="Exfxcxdxbxegedabagacad"

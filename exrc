@@ -20,13 +20,15 @@
 " This way, you can use 4, someone else can use 8, and the file will look
 " right to both of you (the file itself will conform to the local settings of
 " the reader).
-:set tabstop=4       " The width of a TAB is set to 4.
+":set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
 ":set shiftwidth=4    " Indents will have a width of 4 
 ":set softtabstop=4   " Sets the number of columns for a TAB set
 ":set expandtab       " Expand TABs to spaces, DON'T DO THIS
+
+:set tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab
 
 " show what line/column I am on
 :set ruler
@@ -44,7 +46,8 @@ syntax on
 " -------- Language-specific formating stuff
 
 " let vi figure out the filetype so it knows how to apply highlighting
-filetype plugin on
+"filetype plugin on
+"filetype indent off
 au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.pde set filetype=java
 

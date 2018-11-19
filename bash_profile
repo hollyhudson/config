@@ -1,25 +1,27 @@
 #/bin/bash
 # Last updated by holly 15 feb 2015
 #
+# This file sources .bashrc, but .bashrc does not source this file.
+#
 # This file is for configuring the interactive shell (when a human is using
 # the command line, as opposed to a program running an automated set of
 # commands).  Aliases for commands and things that make the shell
-# pretty go here, not in .bashrc.  This file sources .bashrc, but
-# .bashrc does not source this file.
+# pretty go here, not in .bashrc.  
 
+# if .bashrc exists, source it
 if [ -f ~/.bashrc ]; then
 	source ~/.bashrc
 fi
 
-# Turn on noclobber
+# Turn on noclobber, so you won't accidently overwrite existing files
+# when using redirects (eg. cat "some stuff" > myImportantFile won't work)
 set -o noclobber
 
 # Makes your backspace key work like a backspace key
 stty erase ^? 
 
-# Path configuration
+# Path is set in .bashrc, here's some additional configuration
 export MANPATH="/usr/man:/usr/local/man:/opt/local/man:$MANPATH"
-# PATH is set in .bashrc
 
 # Basic behavior and interaction configuration
 export EDITOR=vi
@@ -57,7 +59,7 @@ alias timeams="TZ=Europe/Amsterdam date"
 # Configure the colors ls uses.  See man ls to see what the setting mean
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
-# for git prompt
+# for git prompt, first put git-prompt.sh in your home dir:
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 # must have \$(__git_ps1 ' (%s)') in your PS1, the \ is important!
 source ~/.git-prompt.sh
@@ -78,6 +80,7 @@ U_WHEAT="\xf0\x9f\x8c\xbe"
 U_HERB="\xf0\x9f\x8c\xbf"
 U_TEA="\xf0\x9f\x8d\xb5"
 
+# this is a plain, simple prompt with just hostname:working_dir:
 #export PS1="\h:\w: "
 
 #STARTCOLOR='\[\e[0;35m\]'

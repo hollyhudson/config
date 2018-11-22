@@ -1,68 +1,97 @@
-#/bin/bash
-# Last updated by holly 15 feb 2015
-#
-# This file sources .bashrc, but .bashrc does not source this file.
+#bin/bash
+# Last updated by holly 21 nov 2018
 #
 # This file is for configuring the interactive shell (when a human is using
 # the command line, as opposed to a program running an automated set of
 # commands).  Aliases for commands and things that make the shell
 # pretty go here, not in .bashrc.  
+#
+# This file sources .bashrc, but .bashrc does not source this file.
+
 
 # if .bashrc exists, source it
 if [ -f ~/.bashrc ]; then
 	source ~/.bashrc
 fi
 
-# Turn on noclobber, so you won't accidently overwrite existing files
-# when using redirects (eg. cat "some stuff" > myImportantFile won't work)
-set -o noclobber
+#########################################################################
+# Path configuration
+#########################################################################
 
-# Makes your backspace key work like a backspace key
-stty erase ^? 
-
-# Path is set in .bashrc, here's some additional configuration
+# PATH is set in .bashrc, other path stuff is here
 export MANPATH="/usr/man:/usr/local/man:/opt/local/man:$MANPATH"
+
+#########################################################################
+# Editing and viewing files
+#########################################################################
 
 # Basic behavior and interaction configuration
 export EDITOR=vi
 export PAGER=less
 export LESS="-d -f -X -R"
+
+#########################################################################
+# Behavior on the command line
+#########################################################################
+
 # use vi for editing on the command line
 set -o vi
 
-# aliases for commands
-#
-# G for Syntax highlighting
-alias ls="ls -G"
-alias ll="ls -FlahG"
-alias s="git status"
-saynl() {
-	trans \
-		en:nl \
-		-show-original n \
-		-show-original-dictionary n \
-		-show-dictionary n \
-		-show-languages n \
-		-show-alternatives n \
-		-show-prompt-message n \
-		--no-ansi  \
-		"$*" \
-		| say -v Claire;
-}
+# Makes your backspace key work like a backspace key
+stty erase ^? 
 
+# Turn on noclobber, so you won't accidently overwrite existing files
+# when using redirects (eg. cat "some stuff" > myImportantFile won't work)
+set -o noclobber
+
+#########################################################################
+# Aliases
+#########################################################################
+
+# G is for colored output
+alias ls="ls -G"
 # alias ls='ls --color' # for linux
+
+
+# Configure the colors ls uses.  See man ls to see what the setting mean
+export LSCOLORS="Exfxcxdxbxegedabagacad"
+
+# F: with symbols, l: long, a: all, including dotfiles, h: human-readable units
+alias ll="ls -FlahG" 
 
 alias vi="/usr/bin/vi"
 alias timenyc="TZ=America/New_York date"
 alias timeams="TZ=Europe/Amsterdam date"
 
-# Configure the colors ls uses.  See man ls to see what the setting mean
-export LSCOLORS="Exfxcxdxbxegedabagacad"
+alias trans='trans -e "deepl"'
+
+#########################################################################
+# Git configuration
+#########################################################################
+
+alias s="git status"
 
 # for git prompt, first put git-prompt.sh in your home dir:
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 # must have \$(__git_ps1 ' (%s)') in your PS1, the \ is important!
 source ~/.git-prompt.sh
+
+#########################################################################
+# Prompt
+#########################################################################
+
+# The beginning is to tell iterm2 to put the working directory up there
+TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
+
+# this is a plain, simple prompt with just hostname:working_dir:
+#export PS1="\h:\w: "
+
+# slightly more complex prompt with colors and a git info
+export PS1="${TITLEBAR}\[$Blue\]\h:\w:\[$Color_Off\]\$(__git_ps1 ' (%s)') "
+
+# prompt with unicode emojis in it,
+# it's pretty but it can sometimes cause issues with line wrapping
+#export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$U_FLOWER \[$Blue\]\w$U_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
 
 # Some kewl stuff
 # to get the codes for emojis:
@@ -80,29 +109,14 @@ U_WHEAT="\xf0\x9f\x8c\xbe"
 U_HERB="\xf0\x9f\x8c\xbf"
 U_TEA="\xf0\x9f\x8d\xb5"
 
-# this is a plain, simple prompt with just hostname:working_dir:
-#export PS1="\h:\w: "
-
 #STARTCOLOR='\[\e[0;35m\]'
 #ENDCOLOR="\[\e[0m\]"
 #export PS1="$STARTCOLOR\h:\w: $ENDCOLOR"
 
-# The beginning is to tell iterm2 to put the working directory up thereL
-TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
-export PS1="${TITLEBAR}\[$Blue\]\h:\w:\[$Color_Off\]\$(__git_ps1 ' (%s)') "
-#export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$FANCY_FLOWER \[$Blue\]\w$FANCY_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
-
-# for pyenv, which manages multiple installs of python
-# https://github.com/yyuu/pyenv#homebrew-on-mac-os-x
-# eval "$(pyenv init -)"
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-# if you can't find hass (home assistant) it's here:
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
-
+#########################################################################
 # Greeting
+#########################################################################
+
 echo ""
 echo ""
 echo ""

@@ -48,8 +48,8 @@ set -o noclobber
 # Aliases
 #########################################################################
 
-# G is for colored output
-alias ls="ls -G"
+# G is for colored output on macOS
+alias ls="ls -G" # for mac
 # alias ls='ls --color' # for linux
 
 

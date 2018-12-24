@@ -81,7 +81,7 @@ source ~/.git-prompt.sh
 #########################################################################
 
 # The beginning is to tell iterm2 to put the working directory up there
-TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
+#TITLEBAR='\[\033]0;\h:\w\007\]' # \h = hostname \W = working directory
 
 # this is a plain, simple prompt with just hostname:working_dir:
 #export PS1="\h:\w: "
@@ -91,7 +91,7 @@ export PS1="${TITLEBAR}\[$Blue\]\h:\w:\[$Color_Off\]\$(__git_ps1 ' (%s)') "
 
 # prompt with unicode emojis in it,
 # it's pretty but it can sometimes cause issues with line wrapping
-#export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$U_FLOWER \[$Blue\]\w$U_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
+export PS1="${TITLEBAR}\[$Blue\]\h\[$Cyan\]$U_FLOWER \[$Blue\]\w$U_FISH \[$Color_Off\]\$(__git_ps1 ' (%s)') "
 
 # Some kewl stuff
 # to get the codes for emojis:

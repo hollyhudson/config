@@ -17,7 +17,10 @@
 umask 066
 
 # Your PATH!  Where to find your commands and executables
-export PATH="/usr/local/bin:/bin:/usr/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin:$HOME/bin:$HOME/anaconda3/bin:/usr/local/sbin:/sbin"
+export PATH="/usr/local/bin:/bin:/usr/bin:/usr/ucb:~/bin:/usr/sbin:/usr/local/MacGPG2/bin:$HOME/bin:$HOME/anaconda3/bin:/usr/local/sbin:/sbin:$HOME/.ruby/bin"
+
+# some stuff for ruby
+export GEM_HOME="$HOME/.ruby"
 
 # some stuff for node.js
 export NVM_DIR="$HOME/.nvm"

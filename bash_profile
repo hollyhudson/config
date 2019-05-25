@@ -77,6 +77,14 @@ alias s="git status"
 source ~/.git-prompt.sh
 
 #########################################################################
+# GPG -- for ssh'ing to remote servers with a yubikey
+#########################################################################
+
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+#########################################################################
 # Prompt
 #########################################################################
 
